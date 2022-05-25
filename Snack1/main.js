@@ -9,16 +9,23 @@ let somma = 0;
 
 while (somma < 50) {
   // const con prompt che chiede all'utente di inserire il numero
-  const askNumber = parseInt(prompt("Inserisci un numero"));
-  //creiamo un if che come condizione verifica che askNumber non sia diverso da un numero
-  if (!isNaN(askNumber) && askNumber !== "") {
-    numbersList.push(askNumber);
-    for (let i = 0; i < numbersList.length; i++) {
-      somma += numbersList[i];
-    }
-  }
+  let askNumber = parseInt(prompt("Inserisci un numero"));
 
+  if (!isNaN(askNumber) && askNumber !== "") {
+  }
+  if (somma + askNumber >= 50) {
+    askNumber = parseInt(
+      prompt("Inserisci un numero minore o uguale a " + (50 - somma))
+    );
+  }
+  numbersList.push(askNumber);
+
+  somma = 0; // cosi posso resetare ad ogni cilo
+  for (let i = 0; i < numbersList.length; i++) {
+    somma += numbersList[i];
+  }
   console.log(numbersList);
   console.log(somma);
 }
+
 console.log(somma);
