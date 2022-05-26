@@ -16,5 +16,5 @@ while (numberList.length < 5) {
     somma += numberList[i];
   }
 }
-console.log(numberList);
-console.log(somma);
+console.log("I numeri inseriti sono i seguenti:" + " " + numberList);
+console.log("La somma è di:" + " " + somma);
